@@ -62,6 +62,7 @@ app.get("/api/flavors", async (req, res, next) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal server error" });
+        next(error);
     }
 });
 app.post("/api/flavors", async (req, res, next) => {
@@ -80,6 +81,7 @@ app.post("/api/flavors", async (req, res, next) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal server error" });
+        next(error);
     }
 });
 app.put("/api/flavors/:id", async (req, res, next) => {
@@ -101,6 +103,7 @@ app.put("/api/flavors/:id", async (req, res, next) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal server error" });
+        next(error);
     }
 });
 app.delete("/api/flavors/:id", async (req, res, next) => {
@@ -117,6 +120,7 @@ app.delete("/api/flavors/:id", async (req, res, next) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal server error" });
+        next(error);
     }
 });
 
